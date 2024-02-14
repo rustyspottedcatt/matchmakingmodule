@@ -1,0 +1,15 @@
+{
+	"name": "MultiplayerSessionManager",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Packages": {
+				"$path": "Packages",
+				"MultiplayerSessionManager": {
+					"$path": "src"
+				}
+			}
+		}
+	}
+}
