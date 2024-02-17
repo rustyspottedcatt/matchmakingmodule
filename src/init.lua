@@ -75,6 +75,8 @@ export type Signal<T> = {
 }
 
 local function deepcopy(orig)
+    assert(orig, "Original table was not defined")
+
     local orig_type = type(orig)
     local copy
     if orig_type == 'table' then
@@ -90,9 +92,13 @@ local function deepcopy(orig)
 end
 
 local function onChange(sessionID, key, newValue, oldValue)
+    assert(sessionID, "SessionID not defined")
+    assert(newValue, "newValue not defined")
+    assert(key, "key not defined")
+    assert(oldValue, "oldValue not defined")
+    
     print(string.format("Session %s: %s changed from %s to %s", sessionID, key, tostring(oldValue), tostring(newValue)))
 end
-
 
 function MultiplayerSessionManager.new()
     local self = setmetatable({}, MultiplayerSessionManager)
